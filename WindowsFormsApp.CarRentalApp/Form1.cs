@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Data.Common;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp.CarRentalApp
 {
     public partial class Form1 : Form
     {
+        private readonly CarRentalEntities carRentalEntities;
         public Form1()
         {
             InitializeComponent();
+            carRentalEntities = new CarRentalEntities();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -40,8 +42,18 @@ namespace WindowsFormsApp.CarRentalApp
                 //if (isValid == true)
                 if (isValid)
                 {
+                    var rentalRecord = new CarRentalRecord();
+                    rentalRecord.CustomerName = customerName;
+                    rentalRecord.DateRented = dateRented;
+                    rentalRecord.DateReturned = dateReturned;
+                    rentalRecord.Cost = (decimal)cost;
+                    rentalRecord.TypeOfCarId = (int)cbTypeOfCar.SelectedValue;
+                    //Adding(inserting) the collection of changes to the database and saving it
+                    carRentalEntities.CarRentalRecords.Add(rentalRecord);
+                    carRentalEntities.SaveChanges();
+
                     MessageBox.Show($"Customer Name: {customerName}\n\r" +
-                        $"Cost: {cost}" +
+                        $"Cost: {cost}\n\r" +
                         $"Date Rented: {dateRented}\n\r" +
                         $"Date Returned: {dateReturned}\n\r" +
                         $"Car Type: {typeOfCar}\n\r" +
@@ -57,6 +69,15 @@ namespace WindowsFormsApp.CarRentalApp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Getting the cars from TypesOfCars table in db
+            var cars = carRentalEntities.TypesOfCars.ToList();
+            cbTypeOfCar.DisplayMember = "Name";
+            cbTypeOfCar.ValueMember = "Id";
+            cbTypeOfCar.DataSource = cars;
         }
     }
 }

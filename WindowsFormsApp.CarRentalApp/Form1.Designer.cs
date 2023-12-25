@@ -117,14 +117,6 @@
             // 
             this.cbTypeOfCar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTypeOfCar.FormattingEnabled = true;
-            this.cbTypeOfCar.Items.AddRange(new object[] {
-            "Kia",
-            "Tata",
-            "Honda",
-            "Hyundai",
-            "Suzuki",
-            "Mahindra",
-            "Toyota"});
             this.cbTypeOfCar.Location = new System.Drawing.Point(43, 307);
             this.cbTypeOfCar.Name = "cbTypeOfCar";
             this.cbTypeOfCar.Size = new System.Drawing.Size(214, 24);
@@ -177,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

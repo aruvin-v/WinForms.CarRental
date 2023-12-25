@@ -115,13 +115,6 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tata",
-            "Hyundai",
-            "Honda",
-            "Suzuki",
-            "Mahindra",
-            "Kia"});
             this.comboBox1.Location = new System.Drawing.Point(22, 273);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(222, 24);
