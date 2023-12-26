@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp.CarRentalApp
 {
-    public partial class Form1 : Form
+    public partial class AddRentalRecord : Form
     {
         private readonly CarRentalEntities carRentalEntities;
-        public Form1()
+        public AddRentalRecord()
         {
             InitializeComponent();
             carRentalEntities = new CarRentalEntities();
