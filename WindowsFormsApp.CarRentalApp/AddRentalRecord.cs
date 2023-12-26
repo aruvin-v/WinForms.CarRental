@@ -74,7 +74,11 @@ namespace WindowsFormsApp.CarRentalApp
         private void Form1_Load(object sender, EventArgs e)
         {
             //Getting the cars from TypesOfCars table in db
-            var cars = carRentalEntities.TypesOfCars.ToList();
+            //var cars = carRentalEntities.TypesOfCars.ToList();
+            var cars = carRentalEntities.TypesOfCars
+                .Select(x => new {Id = x.Id, Name = x.Make + " " + x.Model})
+                .ToList();
+
             cbTypeOfCar.DisplayMember = "Name";
             cbTypeOfCar.ValueMember = "Id";
             cbTypeOfCar.DataSource = cars;

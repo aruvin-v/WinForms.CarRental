@@ -43,7 +43,7 @@
             this.gvVehicleList.Name = "gvVehicleList";
             this.gvVehicleList.RowHeadersWidth = 51;
             this.gvVehicleList.RowTemplate.Height = 24;
-            this.gvVehicleList.Size = new System.Drawing.Size(334, 257);
+            this.gvVehicleList.Size = new System.Drawing.Size(776, 257);
             this.gvVehicleList.TabIndex = 0;
             // 
             // label1
@@ -58,7 +58,7 @@
             // 
             // btnAddCar
             // 
-            this.btnAddCar.Location = new System.Drawing.Point(454, 118);
+            this.btnAddCar.Location = new System.Drawing.Point(90, 371);
             this.btnAddCar.Name = "btnAddCar";
             this.btnAddCar.Size = new System.Drawing.Size(136, 42);
             this.btnAddCar.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // btnEditCar
             // 
-            this.btnEditCar.Location = new System.Drawing.Point(454, 205);
+            this.btnEditCar.Location = new System.Drawing.Point(339, 371);
             this.btnEditCar.Name = "btnEditCar";
             this.btnEditCar.Size = new System.Drawing.Size(136, 42);
             this.btnEditCar.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // btnDeleteCar
             // 
-            this.btnDeleteCar.Location = new System.Drawing.Point(454, 287);
+            this.btnDeleteCar.Location = new System.Drawing.Point(580, 371);
             this.btnDeleteCar.Name = "btnDeleteCar";
             this.btnDeleteCar.Size = new System.Drawing.Size(136, 42);
             this.btnDeleteCar.TabIndex = 4;
